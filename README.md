@@ -5,7 +5,7 @@ environment installation for DL
 
 
 
-##Tips for terminal
+## Tips for terminal
 
 #### [theme](https://github.com/Mayccoll/Gogh)
 
@@ -37,7 +37,7 @@ to
 auth       sufficient   pam_shells.so
 ```
 
-####[Powerfonts](https://github.com/powerline/fonts)
+#### [Powerfonts](https://github.com/powerline/fonts)
 
 ```Sh
 sudo apt-get install fonts-powerline
