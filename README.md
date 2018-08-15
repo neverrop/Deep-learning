@@ -54,7 +54,7 @@ sudo apt-get install fonts-powerline
 #### [auto-suggestion](https://github.com/zsh-users/zsh-autosuggestions)
 
 ```Sh
-git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh}/plugins/zsh-autosuggestions
 
 plugins=(zsh-autosuggestions) 
 ```
@@ -62,7 +62,7 @@ plugins=(zsh-autosuggestions)
 #### [highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 
 ```sh
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh}/plugins/zsh-syntax-highlighting
 plugins=(zsh-syntax-highlighting)
 source ~/.zshrc
 ```
