@@ -1,0 +1,34 @@
+output_path = 'normal/';
+out_color = 'color/';
+normal_xyz_path = './mesh_images/';
+root_folder = pwd;
+
+if ~exist(output_path,'dir')
+    mkdir(output_path);
+end
+if ~exist(out_color,'dir')
+    mkdir(out_color);
+end
+
+x_files = dir([normal_xyz_path '*nx.png']);
+y_files = dir([normal_xyz_path '*ny.png']);
+z_files = dir([normal_xyz_path '*nz.png']);
+
+f = fopen('train_datalist1.txt','w');
+for i = 1: length(x_files)
+    nx = imread([x_files(i).folder '\' x_files(i).name]);
+    ny = imread([y_files(i).folder '\' y_files(i).name]);
+    nz = imread([z_files(i).folder '\' z_files(i).name]);
+    normal_r = cat(3,nx,ny,nz);
+    normal = im2uint8(normal_r);
+    normal = imresize(normal,[240,320]);
+    index = x_files(i).name;
+    idx = str2num(index(1:9));
+    color = imread(sprintf('./color_raw/%d.jpg',idx));
+    color = imresize(color, [240,320]);
+    %imwrite(normal, sprintf('%s%06d.png',output_path,idx));
+    %imwrite(color, sprintf('%s%06d.png',out_color,idx));
+    %fprintf(f, '../../data/%s ../../data/%s\n', sprintf('%s%06d.png',out_color,idx), sprintf('%s%06d.png',output_path,idx));
+    fprintf(f, '%%s %s\n', sprintf('%s%06d.png',out_color,idx), sprintf('%s%06d.png',output_path,idx));
+end
+fclose(f);
