@@ -88,7 +88,10 @@ sudo pip3 install thefuck
 brew install thefuck  # OSX
 ```
 
-
+#### Others
+```sh
+pip install tldr
+```
 
 -----
 
