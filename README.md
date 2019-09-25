@@ -43,6 +43,11 @@ auth       sufficient   pam_shells.so
 sudo apt-get install fonts-powerline
 ```
 
+### [quick-look](https://github.com/sindresorhus/quick-look-plugins)
+```sh
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package quicklookase qlvideo
+```
+
 #### [silver searcher](https://github.com/ggreer/the_silver_searcher)
 
 ```sh
@@ -91,6 +96,10 @@ brew install thefuck  # OSX
 #### Others
 ```sh
 pip install tldr
+```
+sshpass
+```sh
+brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
 ```
 
 -----
